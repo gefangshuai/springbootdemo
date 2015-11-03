@@ -1,5 +1,6 @@
 package com.example.gefangshuai;
 
+import com.example.gefangshuai.core.AppSettings;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,6 +9,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import javax.annotation.Resource;
 import java.util.List;
 
 /**
@@ -16,13 +18,14 @@ import java.util.List;
 @Controller
 public class UserController {
 
+
     Logger logger = LogManager.getLogger(User.class);
 
     @Autowired
     private UserDao userDao;
 
     @RequestMapping("/users")
-    public String list(Model model){
+    public String list(Model model) {
         List<User> users = userDao.findAll();
         model.addAttribute("users", users);
         return "users";
@@ -30,13 +33,13 @@ public class UserController {
 
     @RequestMapping("/users/get")
     @ResponseBody
-    public String getaaa(){
+    public String getaaa() {
         return "ddddd";
     }
 
     @RequestMapping("/users/getb")
     @ResponseBody
-    public String getBB(){
+    public String getBB() {
         return "abababa";
     }
 

@@ -1,4 +1,4 @@
-package com.example.gefangshuai;
+package com.example.gefangshuai.core;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -7,19 +7,13 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import javax.annotation.Resource;
-
 @SpringBootApplication
-@EnableConfigurationProperties
+@EnableConfigurationProperties({AppSettings.class})
 @Controller
 public class SpringdemoApplication {
 
-    @Resource
-    private AppSettings appSettings;
-
     @RequestMapping("/")
     public String greeting(Model model) {
-        model.addAttribute("appSettings", appSettings);
         return "index";
     }
 
