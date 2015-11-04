@@ -1,4 +1,4 @@
-package com.example.gefangshuai;
+package com.example.gefangshuai.user;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.JpaSpecificationExecutor;

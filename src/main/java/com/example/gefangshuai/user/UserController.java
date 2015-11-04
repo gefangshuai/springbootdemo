@@ -1,11 +1,11 @@
-package com.example.gefangshuai;
+package com.example.gefangshuai.user;
 
-import com.example.gefangshuai.core.AppSettings;
-import org.apache.log4j.LogManager;
-import org.apache.log4j.Logger;
+import com.example.gefangshuai.core.AppSettingsController;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.util.StringUtils;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -16,31 +16,31 @@ import java.util.List;
  * Created by gefangshuai on 2015/11/3.
  */
 @Controller
-public class UserController {
+@RequestMapping("/users")
+public class UserController extends AppSettingsController {
 
 
-    Logger logger = LogManager.getLogger(User.class);
+    @Resource
+    private UserService userService;
 
-    @Autowired
+    @Resource
     private UserDao userDao;
 
-    @RequestMapping("/users")
-    public String list(Model model) {
-        List<User> users = userDao.findAll();
-        model.addAttribute("users", users);
+    @RequestMapping
+    public String index() {
         return "users";
     }
 
-    @RequestMapping("/users/get")
     @ResponseBody
-    public String getaaa() {
-        return "ddddd";
-    }
-
-    @RequestMapping("/users/getb")
-    @ResponseBody
-    public String getBB() {
-        return "abababa";
+    @RequestMapping("list/{cache}")
+    public List<User> listCacheUsers(@PathVariable("cache") String cache) {
+        if ("cache".equals(cache)) {
+            return userService.getCacheUsers();
+        } else if ("update".equals(cache)) {
+            return userService.getNoCacheUsers();
+        } else {
+            return userService.getUsers();
+        }
     }
 
     /**

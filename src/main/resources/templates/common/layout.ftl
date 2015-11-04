@@ -3,8 +3,8 @@
 <#macro main title>
 <!DOCTYPE html>
 <html>
-    <@header.header title="${title}"/>
-<body class="skin-3">
+    <@header.header title="${appSettings.title}"/>
+<body class="md-skin">
 
 <div id="wrapper">
 
@@ -18,18 +18,12 @@
                         <a data-toggle="dropdown" class="dropdown-toggle" href="#">
                             <span class="clear"> <span class="block m-t-xs"> <strong class="font-bold">David
                                 Williams</strong>
-                             </span> <span class="text-muted text-xs block">Art Director <b
-                                    class="caret"></b></span> </span> </a>
-                        <ul class="dropdown-menu animated fadeInRight m-t-xs">
-                            <li><a href="profile.html">Profile</a></li>
-                            <li><a href="contacts.html">Contacts</a></li>
-                            <li><a href="mailbox.html">Mailbox</a></li>
-                            <li class="divider"></li>
-                            <li><a href="login.html">Logout</a></li>
-                        </ul>
+                             </span>
+                        </a>
+
                     </div>
                     <div class="logo-element">
-                        IN+
+                        菜+
                     </div>
                 </li>
                 <li>
@@ -59,12 +53,7 @@
                 <a class="navbar-minimalize minimalize-styl-2 btn btn-primary " href="#"><i class="fa fa-bars"></i>
                 </a>
 
-                <form role="search" class="navbar-form-custom" action="search_results.html">
-                    <div class="form-group">
-                        <input type="text" placeholder="Search for something..." class="form-control"
-                               name="top-search" id="top-search">
-                    </div>
-                </form>
+
             </div>
             <ul class="nav navbar-top-links navbar-right">
                 <li>

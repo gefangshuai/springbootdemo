@@ -1,9 +1,9 @@
 package com.example.gefangshuai.core;
 
+import org.apache.log4j.Logger;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 
-import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -12,12 +12,10 @@ import javax.servlet.http.HttpServletResponse;
  */
 
 public class NavigationHandlerInterceptor extends HandlerInterceptorAdapter{
-    @Resource
-    private AppSettings appSettings;
-
+    Logger logger = Logger.getLogger(NavigationHandlerInterceptor.class);
     @Override
     public void postHandle(HttpServletRequest request, HttpServletResponse response, Object handler, ModelAndView modelAndView) throws Exception {
-        modelAndView.getModelMap().addAttribute("appSettings", appSettings);
+        logger.debug("--- in NavigationHandlerInterceptor ! ---");
         super.postHandle(request, response, handler, modelAndView);
     }
 }

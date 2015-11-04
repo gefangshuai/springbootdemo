@@ -1,5 +1,5 @@
 <#import "common/layout.ftl" as main>
-<@main.main title="${appSettings.title}">
+<@main.main title="aaa">
 <div class="col-sm-4">
     <h2>This is main title</h2>
     <ol class="breadcrumb">

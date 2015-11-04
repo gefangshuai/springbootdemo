@@ -1,4 +1,4 @@
-package com.example.gefangshuai;
+package com.example.gefangshuai.user;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
