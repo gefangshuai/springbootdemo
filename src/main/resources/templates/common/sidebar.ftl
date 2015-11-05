@@ -20,11 +20,11 @@
             <li>
                 <a href="/users"><i class="fa fa-diamond"></i> <span class="nav-label">Layouts</span></a>
             </li>
-            <@shiro.hasRoles role="admin">
+            <@shiro.hasRole role="admin">
                 <li>
                     <a href="/admin/users">admin-users</a>
                 </li>
-            </@shiro.hasRoles>
+            </@shiro.hasRole>
         </ul>
 
     </div>

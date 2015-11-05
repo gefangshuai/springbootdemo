@@ -26,16 +26,30 @@
     </#if>
 </#macro>
 
-<#--自定义根据角色判断标签-->
-<#macro hasRoles role>
+<#--当前用户有角色显示的内容-->
+<#macro hasRole role>
     <#if Session.shiroUser?exists && Session.shiroUser.roles?seq_contains(role)>
         <#nested>
     </#if>
 </#macro>
 
-<#--自定义根据权限判断标签-->
-<#macro hasPermissions permission>
+<#--没有角色显示的内容-->
+<#macro lacksRole role>
+    <#if !Session.shiroUser?exists || !Session.shiroUser.roles?seq_contains(role)>
+        <#nested>
+    </#if>
+</#macro>
+
+<#--有权限显示的内容-->
+<#macro hasPermission permission>
     <#if Session.shiroUser?exists && Session.shiroUser.permissions?seq_contains(permission)>
+        <#nested>
+    </#if>
+</#macro>
+
+<#--没有权限显示的内容-->
+<#macro lacksPermission permission>
+    <#if !Session.shiroUser?exists || !Session.shiroUser.permissions?seq_contains(permission)>
         <#nested>
     </#if>
 </#macro>
