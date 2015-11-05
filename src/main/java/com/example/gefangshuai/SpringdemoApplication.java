@@ -1,5 +1,6 @@
 package com.example.gefangshuai;
 
+import com.example.gefangshuai.core.AppApplicationContext;
 import com.example.gefangshuai.core.AppSettings;
 import com.example.gefangshuai.core.AppSettingsController;
 import org.apache.shiro.SecurityUtils;
@@ -9,6 +10,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.boot.context.web.SpringBootServletInitializer;
+import org.springframework.boot.test.SpringApplicationConfiguration;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -59,7 +63,8 @@ public class SpringdemoApplication extends SpringBootServletInitializer {
     }
 
     public static void main(String[] args) {
-        SpringApplication.run(SpringdemoApplication.class, args);
+        ApplicationContext ctx = SpringApplication.run(SpringdemoApplication.class, args);
+        AppApplicationContext.getInstance().setApplicationContext(ctx);
     }
 
     @Override

@@ -1,10 +1,9 @@
 <#import "common/header.ftl" as header>
-<#import "common/sct.ftl" as script>
+<#import "/spring.ftl" as spring />
+<#import "common/static.ftl" as static>
 <!DOCTYPE html>
 <html>
-
-<@header.header title="${appSettings.title}" />
-
+<@header.show title="${appSettings.title}" />
 <body class="gray-bg">
     <div class="middle-box text-center loginscreen animated fadeInDown">
         <div>
@@ -29,7 +28,7 @@
             <p class="m-t"> <small>Base on Bootstrap 3 &copy; 2014</small> </p>
         </div>
     </div>
-    <@script.js_main/>
+    <@static.js/>
 </body>
 
 </html>

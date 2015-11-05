@@ -1,5 +1,6 @@
 package com.example.gefangshuai.core;
 
+import com.example.gefangshuai.core.shiro.CustomFormAuthenticationFilter;
 import org.springframework.boot.autoconfigure.web.WebMvcAutoConfiguration;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -9,13 +10,20 @@ import org.springframework.web.servlet.handler.SimpleMappingExceptionResolver;
 import java.util.Properties;
 
 /**
+ * 定义了mvc适配器
  * Created by gefangshuai on 2015/11/3.
  */
 @Configuration
-public class MyMVCConfigurerAdapter extends WebMvcAutoConfiguration.WebMvcAutoConfigurationAdapter {
+public class WebMVCConfigurerAdapter extends WebMvcAutoConfiguration.WebMvcAutoConfigurationAdapter {
+
+    @Bean
+    public NavigationHandlerInterceptor getNavigationHandlerInterceptor(){
+        return new NavigationHandlerInterceptor();
+    }
+
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
-        registry.addInterceptor(new NavigationHandlerInterceptor())
+        registry.addInterceptor(getNavigationHandlerInterceptor())
                 .addPathPatterns("/**");
     }
 
@@ -36,4 +44,5 @@ public class MyMVCConfigurerAdapter extends WebMvcAutoConfiguration.WebMvcAutoCo
         exceptionResolver.setExceptionMappings(properties);
         return exceptionResolver;
     }
+
 }

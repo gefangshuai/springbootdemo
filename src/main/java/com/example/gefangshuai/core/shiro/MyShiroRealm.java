@@ -14,6 +14,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 /**
+ * 自定义Realm
  * Created by gefangshuai on 2015/11/4.
  */
 @Component

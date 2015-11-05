@@ -5,6 +5,7 @@ import org.apache.shiro.spring.LifecycleBeanPostProcessor;
 import org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor;
 import org.apache.shiro.spring.web.ShiroFilterFactoryBean;
 import org.apache.shiro.web.mgt.DefaultWebSecurityManager;
+import org.apache.shiro.web.session.mgt.DefaultWebSessionManager;
 import org.springframework.aop.framework.autoproxy.DefaultAdvisorAutoProxyCreator;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -48,6 +49,7 @@ public class ShiroConfiguration {
         return proxyCreator;
     }
 
+
     @Bean(name = "securityManager")
     public DefaultWebSecurityManager getDefaultWebSecurityManager() {
         DefaultWebSecurityManager securityManager = new DefaultWebSecurityManager();
@@ -63,17 +65,27 @@ public class ShiroConfiguration {
         return new AuthorizationAttributeSourceAdvisor();
     }
 
+    /**
+     * 设置自定义的formFilter
+     * @return
+     */
+    public CustomFormAuthenticationFilter getCustomFormAuthenticationFilter() {
+        CustomFormAuthenticationFilter authenticationFilter = new CustomFormAuthenticationFilter();
+        return authenticationFilter;
+    }
+
     @Bean(name = "shiroFilter")
     public ShiroFilterFactoryBean getShiroFilterFactoryBean() {
+        Map<String, Filter> filterMap = new HashMap<>();
+        filterMap.put("authc", getCustomFormAuthenticationFilter());
 
         ShiroFilterFactoryBean filterFactoryBean = new ShiroFilterFactoryBean();
+
         filterFactoryBean.setSecurityManager(getDefaultWebSecurityManager());
-
-        Map<String, Filter> filterMap = new HashMap<>();
-        filterMap.put("authc", new CustomFormAuthenticationFilter());
-
         filterFactoryBean.setLoginUrl("/login");
         filterFactoryBean.setSuccessUrl("/");
+        filterFactoryBean.setFilters(filterMap);
+
         filterChainDefinitionMap.put("/css/**", "anon");
         filterChainDefinitionMap.put("/img/**", "anon");
         filterChainDefinitionMap.put("/js/**", "anon");
@@ -85,7 +97,6 @@ public class ShiroConfiguration {
         filterChainDefinitionMap.put("/**", "anon");
 
         filterFactoryBean.setFilterChainDefinitionMap(filterChainDefinitionMap);
-        filterFactoryBean.setFilters(filterMap);
         return filterFactoryBean;
     }
 }
