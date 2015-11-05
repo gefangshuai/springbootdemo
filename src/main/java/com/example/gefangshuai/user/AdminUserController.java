@@ -1,5 +1,6 @@
 package com.example.gefangshuai.user;
 
+import org.apache.shiro.authz.annotation.RequiresRoles;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -16,6 +17,7 @@ public class AdminUserController {
     private UserService userService;
 
     @RequestMapping
+    @RequiresRoles({"admin"})
     public List<CustomUser> listUsers() {
         return userService.getUsers();
     }

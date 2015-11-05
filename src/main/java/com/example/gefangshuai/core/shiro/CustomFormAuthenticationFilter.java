@@ -1,4 +1,4 @@
-package com.example.gefangshuai.core;
+package com.example.gefangshuai.core.shiro;
 
 import org.apache.shiro.authc.AuthenticationToken;
 import org.apache.shiro.subject.Subject;

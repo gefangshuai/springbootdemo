@@ -1,4 +1,4 @@
-package com.example.gefangshuai.core;
+package com.example.gefangshuai.core.shiro;
 
 import com.example.gefangshuai.user.CustomUser;
 import com.example.gefangshuai.user.UserService;
@@ -17,7 +17,7 @@ import java.util.Set;
  * Created by gefangshuai on 2015/11/4.
  */
 @Component
-public class ShiroRealmImpl extends AuthorizingRealm {
+public class MyShiroRealm extends AuthorizingRealm {
     @Resource
     private UserService userService;
 

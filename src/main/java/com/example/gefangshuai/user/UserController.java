@@ -1,6 +1,7 @@
 package com.example.gefangshuai.user;
 
 import com.example.gefangshuai.core.AppSettingsController;
+import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -30,6 +31,7 @@ public class UserController extends AppSettingsController {
 
     @ResponseBody
     @RequestMapping("list/{cache}")
+    @RequiresPermissions({"users"})
     public List<CustomUser> listCacheUsers(@PathVariable("cache") String cache) {
         if ("cache".equals(cache)) {
             return userService.getCacheUsers();
