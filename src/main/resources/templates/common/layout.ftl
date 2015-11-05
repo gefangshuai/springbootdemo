@@ -39,7 +39,7 @@
                     </ul>
                 </li>
                 <li>
-                    <a href="layouts.html"><i class="fa fa-diamond"></i> <span class="nav-label">Layouts</span></a>
+                    <a href="/users"><i class="fa fa-diamond"></i> <span class="nav-label">Layouts</span></a>
                 </li>
             </ul>
 
@@ -162,7 +162,7 @@
 
 
                 <li>
-                    <a href="login.html">
+                    <a href="/logout">
                         <i class="fa fa-sign-out"></i> Log out
                     </a>
                 </li>

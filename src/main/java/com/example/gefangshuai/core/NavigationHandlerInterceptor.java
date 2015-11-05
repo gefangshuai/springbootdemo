@@ -15,7 +15,7 @@ public class NavigationHandlerInterceptor extends HandlerInterceptorAdapter{
     Logger logger = Logger.getLogger(NavigationHandlerInterceptor.class);
     @Override
     public void postHandle(HttpServletRequest request, HttpServletResponse response, Object handler, ModelAndView modelAndView) throws Exception {
-        logger.debug("--- in NavigationHandlerInterceptor ! ---");
+        logger.debug("--- in NavigationHandlerInterceptor ! " + request.getServletPath() +"---");
         super.postHandle(request, response, handler, modelAndView);
     }
 }

@@ -8,10 +8,15 @@ import javax.validation.constraints.NotNull;
  */
 @Entity
 @Table(name = "users")
-public class User {
-    public long id;
-    public String email;
-    public String name;
+public class CustomUser{
+    private long id;
+    private String email;
+    private String name;
+    private String role;
+    private String password;
+
+    public CustomUser() {
+    }
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -21,6 +26,15 @@ public class User {
 
     public void setId(long id) {
         this.id = id;
+    }
+
+    public CustomUser(long id) {
+        this.id = id;
+    }
+
+    public CustomUser(String email, String name) {
+        this.email = email;
+        this.name = name;
     }
 
     @NotNull
@@ -41,15 +55,19 @@ public class User {
         this.name = name;
     }
 
-    public User() {
+    public String getRole() {
+        return role;
     }
 
-    public User(long id) {
-        this.id = id;
+    public void setRole(String role) {
+        this.role = role;
     }
 
-    public User(String email, String name) {
-        this.email = email;
-        this.name = name;
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 }
