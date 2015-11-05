@@ -17,6 +17,7 @@ public class CustomFormAuthenticationFilter extends FormAuthenticationFilter {
         UserService userService = AppApplicationContext.getInstance().getApplicationContext().getBean(UserService.class);
         CustomUser user = userService.findByName((String) subject.getPrincipal());
         ShiroUser shiroUser = new ShiroUser(true, user.getName(), user);
+        shiroUser.setRoles(new String[]{user.getRole()});
         subject.getSession().setAttribute("shiroUser", shiroUser);
         return super.onLoginSuccess(token, subject, request, response);
     }

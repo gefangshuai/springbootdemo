@@ -7,6 +7,8 @@ public class ShiroUser {
     private boolean isLogin= false;
     private Object user;
     private String principal;
+    private String[] roles;
+    private String[] permissions;
 
     public ShiroUser(boolean isLogin, String principal, Object user) {
         this.isLogin = isLogin;
@@ -36,5 +38,21 @@ public class ShiroUser {
 
     public void setPrincipal(String principal) {
         this.principal = principal;
+    }
+
+    public String[] getRoles() {
+        return roles;
+    }
+
+    public void setRoles(String[] roles) {
+        this.roles = roles;
+    }
+
+    public String[] getPermissions() {
+        return permissions;
+    }
+
+    public void setPermissions(String[] permissions) {
+        this.permissions = permissions;
     }
 }
