@@ -1,4 +1,4 @@
-package io.github.gefangshuai.springbootdemo.user;
+package io.github.gefangshuai.springbootapp.user;
 
 import org.apache.shiro.authz.annotation.RequiresRoles;
 import org.springframework.web.bind.annotation.RequestMapping;

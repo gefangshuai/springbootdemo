@@ -1,6 +1,6 @@
-package io.github.gefangshuai.springbootdemo.user;
+package io.github.gefangshuai.springbootapp.user;
 
-import io.github.gefangshuai.springbootdemo.core.AppSettingsController;
+import io.github.gefangshuai.springbootapp.core.AppSettingsController;
 import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;

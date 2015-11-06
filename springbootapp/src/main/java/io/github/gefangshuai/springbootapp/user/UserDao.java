@@ -1,4 +1,4 @@
-package io.github.gefangshuai.springbootdemo.user;
+package io.github.gefangshuai.springbootapp.user;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.JpaSpecificationExecutor;

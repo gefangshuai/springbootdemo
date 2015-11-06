@@ -1,4 +1,4 @@
-package io.github.gefangshuai.springbootdemo.core;
+package io.github.gefangshuai.springbootapp.core;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

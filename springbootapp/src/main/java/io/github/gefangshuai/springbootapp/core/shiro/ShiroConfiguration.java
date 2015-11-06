@@ -1,4 +1,4 @@
-package io.github.gefangshuai.springbootdemo.core.shiro;
+package io.github.gefangshuai.springbootapp.core.shiro;
 
 import org.apache.shiro.cache.ehcache.EhCacheManager;
 import org.apache.shiro.spring.LifecycleBeanPostProcessor;
