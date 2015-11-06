@@ -3,6 +3,7 @@
 <#import "sidebar.ftl" as side>
 <#import "navTop.ftl" as navTop>
 <#import "../lib/shiro.ftl" as shiro>
+<#import "spring.ftl" as spring>
 <#macro main title>
 <!DOCTYPE html>
 <html>

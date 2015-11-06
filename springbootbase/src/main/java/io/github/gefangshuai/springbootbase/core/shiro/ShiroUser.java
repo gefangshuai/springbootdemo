@@ -1,4 +1,4 @@
-package io.github.gefangshuai.springbootapp.core.shiro;
+package io.github.gefangshuai.springbootbase.core.shiro;
 
 /**
  * Created by gefangshuai on 2015/11/5.

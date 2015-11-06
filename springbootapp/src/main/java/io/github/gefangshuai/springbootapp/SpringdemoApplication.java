@@ -1,6 +1,6 @@
 package io.github.gefangshuai.springbootapp;
 
-import io.github.gefangshuai.springbootapp.core.AppApplicationContext;
+import io.github.gefangshuai.springbootbase.core.AppApplicationContext;
 import io.github.gefangshuai.springbootapp.core.AppSettings;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.subject.Subject;

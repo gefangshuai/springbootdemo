@@ -1,4 +1,4 @@
-package io.github.gefangshuai.springbootapp.core;
+package io.github.gefangshuai.springbootbase.core;
 
 import org.springframework.context.ApplicationContext;
 
