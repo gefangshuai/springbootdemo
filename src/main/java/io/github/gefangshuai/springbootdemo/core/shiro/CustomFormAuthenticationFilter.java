@@ -1,8 +1,8 @@
-package com.example.gefangshuai.core.shiro;
+package io.github.gefangshuai.springbootdemo.core.shiro;
 
-import com.example.gefangshuai.core.AppApplicationContext;
-import com.example.gefangshuai.user.CustomUser;
-import com.example.gefangshuai.user.UserService;
+import io.github.gefangshuai.springbootdemo.core.AppApplicationContext;
+import io.github.gefangshuai.springbootdemo.user.CustomUser;
+import io.github.gefangshuai.springbootdemo.user.UserService;
 import org.apache.shiro.authc.AuthenticationToken;
 import org.apache.shiro.subject.Subject;
 import org.apache.shiro.web.filter.authc.FormAuthenticationFilter;

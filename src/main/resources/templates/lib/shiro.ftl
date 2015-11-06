@@ -1,3 +1,4 @@
+<#ftl strip_whitespace=true>
 <#--需配合 Session.shiroUser 使用-->
 <#--
     用户没有登录时，显示的信息

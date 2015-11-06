@@ -1,4 +1,4 @@
-package com.example.gefangshuai.user;
+package io.github.gefangshuai.springbootdemo.user;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;

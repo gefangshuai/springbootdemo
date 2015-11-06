@@ -1,7 +1,7 @@
-package com.example.gefangshuai.core.shiro;
+package io.github.gefangshuai.springbootdemo.core.shiro;
 
-import com.example.gefangshuai.user.CustomUser;
-import com.example.gefangshuai.user.UserService;
+import io.github.gefangshuai.springbootdemo.user.CustomUser;
+import io.github.gefangshuai.springbootdemo.user.UserService;
 import org.apache.shiro.authc.*;
 import org.apache.shiro.authz.AuthorizationInfo;
 import org.apache.shiro.authz.SimpleAuthorizationInfo;

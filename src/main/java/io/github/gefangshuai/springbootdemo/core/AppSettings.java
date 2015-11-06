@@ -1,4 +1,4 @@
-package com.example.gefangshuai.core;
+package io.github.gefangshuai.springbootdemo.core;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 

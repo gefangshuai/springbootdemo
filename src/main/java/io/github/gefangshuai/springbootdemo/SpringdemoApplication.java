@@ -1,8 +1,7 @@
-package com.example.gefangshuai;
+package io.github.gefangshuai.springbootdemo;
 
-import com.example.gefangshuai.core.AppApplicationContext;
-import com.example.gefangshuai.core.AppSettings;
-import com.example.gefangshuai.core.AppSettingsController;
+import io.github.gefangshuai.springbootdemo.core.AppApplicationContext;
+import io.github.gefangshuai.springbootdemo.core.AppSettings;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.subject.Subject;
 import org.springframework.boot.SpringApplication;
@@ -10,10 +9,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.boot.context.web.SpringBootServletInitializer;
-import org.springframework.boot.test.SpringApplicationConfiguration;
 import org.springframework.context.ApplicationContext;
-import org.springframework.context.ConfigurableApplicationContext;
-import org.springframework.context.annotation.ComponentScan;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;

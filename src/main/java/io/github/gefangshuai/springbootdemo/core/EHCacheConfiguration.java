@@ -1,4 +1,4 @@
-package com.example.gefangshuai.core;
+package io.github.gefangshuai.springbootdemo.core;
 
 import org.springframework.cache.CacheManager;
 import org.springframework.cache.annotation.EnableCaching;
